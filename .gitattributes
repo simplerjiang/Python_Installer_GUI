@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+*.py linguist-language=C
+*.h linguist-language=C
+*.vc linguist-language=C
+*.tcl linguist-language=C
