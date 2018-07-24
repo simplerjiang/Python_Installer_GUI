@@ -1,0 +1,12 @@
+E:\项目\PythonInstaller_GUI\PythonInstaller_GUI\bin\Debug\PythonInstaller_GUI.exe.config
+E:\项目\PythonInstaller_GUI\PythonInstaller_GUI\bin\Debug\PythonInstaller_GUI.exe
+E:\项目\PythonInstaller_GUI\PythonInstaller_GUI\bin\Debug\PythonInstaller_GUI.pdb
+E:\项目\PythonInstaller_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.csprojAssemblyReference.cache
+E:\项目\PythonInstaller_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.Form1.resources
+E:\项目\PythonInstaller_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.Form2.resources
+E:\项目\PythonInstaller_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.Properties.Resources.resources
+E:\项目\PythonInstaller_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.csproj.GenerateResource.cache
+E:\项目\PythonInstaller_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.csproj.CoreCompileInputs.cache
+E:\项目\PythonInstaller_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.exe
+E:\项目\PythonInstaller_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.pdb
+E:\项目\PythonInstaller_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.Form3.resources
