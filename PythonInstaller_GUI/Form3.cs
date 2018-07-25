@@ -13,15 +13,15 @@ namespace PythonInstaller_GUI
 {
     public partial class Form3 : Form
     {
-        public char StartFileArg { get; private set; }
-
         public Form3()
         {
             InitializeComponent();
             Cmd_Back_Text(1);
             Cmd_Back_Text(2);
+            Cmd_Back_Text(3);
         }
 
+        #region Python版本及地址
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e) //选择好按钮并开启卸载button
         {
             if (!this.but_Uninstall.Enabled && this.listBox1.SelectedIndex != -1)
@@ -66,17 +66,28 @@ namespace PythonInstaller_GUI
                 CmdProcess.OutputDataReceived += new DataReceivedEventHandler(p2_OutputDataReceived);
                 CmdProcess.ErrorDataReceived += new DataReceivedEventHandler(p_ErrorDataReceived);
             }
+            else if (mode == 3) //加载列表
+            {
+                this.listBox1.Items.Clear();
+                CmdProcess.OutputDataReceived += new DataReceivedEventHandler(p3_OutputDataReceived);
+                CmdProcess.EnableRaisingEvents = true;
+                CmdProcess.Exited += new EventHandler(CmdProcess_Exited);
+            }
 
             CmdProcess.Start();
             CmdProcess.BeginOutputReadLine();
             CmdProcess.BeginErrorReadLine();
             if (mode == 1)
             {
-                CmdProcess.StandardInput.WriteLine("python -V");
+                CmdProcess.StandardInput.WriteLine("python -V&exit");
             }
             else if (mode == 2)
             {
-                CmdProcess.StandardInput.WriteLine("where python");
+                CmdProcess.StandardInput.WriteLine("where python&exit");
+            }
+            else if (mode == 3)
+            {
+                CmdProcess.StandardInput.WriteLine("python -m pip list&exit");
             }
 
         }
@@ -87,7 +98,7 @@ namespace PythonInstaller_GUI
                 if (this.IsHandleCreated)
                 {
                     // 4. 异步调用，需要invoke  
-                    this.Invoke(new Action<string>((result) =>
+                    this.BeginInvoke(new Action<string>((result) =>
                     {
                         string[] strs = result.Split('\n');
                         foreach (string str in strs)
@@ -97,9 +108,11 @@ namespace PythonInstaller_GUI
                                 string[] python_paths = str.Split(' ');
                                 string python_path = python_paths[1];
                                 this.label_info.Text = "目前的Python版本：" + python_path;
+                                PublicValue.Python_Installed = true;
                                 return;
                             }
                         }
+                        PublicValue.Python_Installed = false;
                         MessageBox.Show("没有找到Python环境！");
                     }), new object[] { e.Data });
                 }
@@ -113,7 +126,7 @@ namespace PythonInstaller_GUI
                 if (this.IsHandleCreated)
                 {
                     // 4. 异步调用，需要invoke  
-                    this.Invoke(new Action<string>((result) =>
+                    this.BeginInvoke(new Action<string>((result) =>
                     {
                         string[] strs = result.Split('\n');
                         foreach (string str in strs)
@@ -128,22 +141,55 @@ namespace PythonInstaller_GUI
                 }
             }
         }
-
-
+        private void p3_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            if (e.Data != null)
+            {
+                if (this.IsHandleCreated)
+                {
+                    // 4. 异步调用，需要invoke  
+                    this.BeginInvoke(new Action<string>((result) =>
+                    {
+                        string[] strs = result.Split('\n');
+                        List<string> all_models = new List<string>();
+                        foreach (string str in strs)
+                        {
+                            if (PublicValue.Models_List == false)
+                            {
+                                if (str.StartsWith("--"))
+                                {
+                                    PublicValue.Models_List = true;
+                                }
+                            }
+                            else
+                            {
+                                all_models.Add(str);
+                            }
+                        }
+                        this.listBox1.Items.AddRange(all_models.ToArray()); 
+                    }), new object[] { e.Data });
+                }
+            }
+        }
+        private void CmdProcess_Exited(object sender, EventArgs e)
+        {
+            PublicValue.Models_List = false;
+        }
         private void p_ErrorDataReceived(object sender, DataReceivedEventArgs e)
         {
             if (e.Data != null)
             {
                 if (this.IsHandleCreated)
                 {
-                    this.Invoke(new Action(() =>
+                    this.BeginInvoke(new Action(() =>
                     {
-                        MessageBox.Show("没有找到Python环境！");
                         Close();
                     }));
                 }
             }
         }
+        #endregion
+
 
     }
 }

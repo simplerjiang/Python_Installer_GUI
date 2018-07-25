@@ -19,8 +19,16 @@ namespace PythonInstaller_GUI
 
         private void Form1_setpath_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
-            f2.Show();
+            if (!PublicValue.Python_Installed)
+            {
+                Form2 f2 = new Form2();
+                f2.Show();
+            }
+            else
+            {
+                MessageBox.Show("Python已安装！请勿重复安装！");
+                return;
+            }
         }
 
         private void Form1_pip_Click(object sender, EventArgs e)
@@ -28,5 +36,12 @@ namespace PythonInstaller_GUI
             Form3 f3 = new Form3();
             f3.Show();
         }
+
+        
+    }
+    public static class PublicValue
+    {
+        public static bool Python_Installed { get; set; } = false;
+        public static bool Models_List { get; set; } = false;
     }
 }
