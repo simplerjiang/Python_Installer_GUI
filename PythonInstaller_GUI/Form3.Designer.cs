@@ -35,6 +35,7 @@
             this.label_info = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.text_path = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -60,6 +61,7 @@
             this.but_Uninstall.TabIndex = 1;
             this.but_Uninstall.Text = "卸载模块";
             this.but_Uninstall.UseVisualStyleBackColor = true;
+            this.but_Uninstall.Click += new System.EventHandler(this.but_Uninstall_Click);
             // 
             // Model_name
             // 
@@ -67,6 +69,7 @@
             this.Model_name.Name = "Model_name";
             this.Model_name.Size = new System.Drawing.Size(137, 25);
             this.Model_name.TabIndex = 2;
+            this.Model_name.TextChanged += new System.EventHandler(this.Model_name_TextChanged);
             // 
             // but_Install
             // 
@@ -77,6 +80,7 @@
             this.but_Install.TabIndex = 1;
             this.but_Install.Text = "安装模块";
             this.but_Install.UseVisualStyleBackColor = true;
+            this.but_Install.Click += new System.EventHandler(this.but_Install_Click);
             // 
             // label_info
             // 
@@ -106,11 +110,22 @@
             this.text_path.Text = "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python36\\python3.exe";
             this.text_path.KeyDown += new System.Windows.Forms.KeyEventHandler(this.text_path_KeyDown);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 41);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(196, 32);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "查看模块更新";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 340);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.text_path);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_info);
@@ -118,6 +133,8 @@
             this.Controls.Add(this.but_Install);
             this.Controls.Add(this.but_Uninstall);
             this.Controls.Add(this.listBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form3";
             this.Text = "Form3";
             this.ResumeLayout(false);
@@ -134,5 +151,6 @@
         private System.Windows.Forms.Label label_info;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox text_path;
+        private System.Windows.Forms.Button button2;
     }
 }

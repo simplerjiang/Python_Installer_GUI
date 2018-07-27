@@ -29,6 +29,7 @@ namespace PythonInstaller_GUI
                     this.textBox1.AppendText("Python3.7-x64文件不存在！错误！" + Environment.NewLine);
                     this.textBox1.AppendText(python_path + Environment.NewLine);
                     this.textBox1.AppendText("已结束..." + Environment.NewLine);
+                    MessageBox.Show("Python文件不存在" + Environment.NewLine + "你有可能在使用简易版，无法部署");
                     goto end;
                 }
                 else if (!Directory.Exists(python_script_path))
@@ -87,6 +88,7 @@ namespace PythonInstaller_GUI
                 if (!Directory.Exists(python_path))
                 {
                     this.textBox1.AppendText("Python3.7-x86文件不存在！错误！" + Environment.NewLine);
+                    MessageBox.Show("Python文件不存在" + Environment.NewLine + "你有可能在使用简易版，无法部署");
                     goto end;
                 }
                 else if (!Directory.Exists(python_script_path))

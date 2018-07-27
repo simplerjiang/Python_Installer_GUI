@@ -22,6 +22,7 @@ namespace PythonInstaller_GUI
             if (!PublicValue.Python_Installed)
             {
                 Form2 f2 = new Form2();
+                f2.Owner = this;
                 f2.Show();
             }
             else
@@ -34,14 +35,24 @@ namespace PythonInstaller_GUI
         private void Form1_pip_Click(object sender, EventArgs e)
         {
             Form3 f3 = new Form3();
+            f3.Owner = this;
             f3.Show();
         }
 
-        
+        private void setPath_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                PublicValue.Python_path = openFileDialog1.FileName;
+
+            }
+        }
     }
     public static class PublicValue
     {
         public static bool Python_Installed { get; set; } = false;
         public static bool Models_List { get; set; } = false;
+        public static string Python_path { get; set; } = "";
+        public static bool UpdateModels_List { get; set; } = false;
     }
 }

@@ -22,3 +22,6 @@ E:\项目\PythonInstaller_GUI\Python_Installer_GUI\PythonInstaller_GUI\obj\Debug
 E:\项目\PythonInstaller_GUI\Python_Installer_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.csproj.CoreCompileInputs.cache
 E:\项目\PythonInstaller_GUI\Python_Installer_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.exe
 E:\项目\PythonInstaller_GUI\Python_Installer_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.pdb
+E:\项目\PythonInstaller_GUI\Python_Installer_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.ModelDownloadForm.resources
+E:\项目\PythonInstaller_GUI\Python_Installer_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.ModelsUninstallForm.resources
+E:\项目\PythonInstaller_GUI\Python_Installer_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.ModelUpdate.resources
