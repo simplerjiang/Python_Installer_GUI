@@ -281,7 +281,7 @@ namespace PythonInstaller_GUI
             {
                 Owner = this
             };
-            dform.Show();
+            dform.ShowDialog();
 
         }
 
@@ -295,16 +295,27 @@ namespace PythonInstaller_GUI
             string models_name = GetModelsName((string)listBox1.SelectedItem);
             ModelsUninstallForm uninstallForm = new ModelsUninstallForm(models_name);
             uninstallForm.Owner = this;
-            uninstallForm.Show();
+            uninstallForm.ShowDialog();
         }
 
 
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ModelUpdate modelUpdate = new ModelUpdate();
-            modelUpdate.Owner = this;
+            ModelUpdate modelUpdate = new ModelUpdate
+            {
+                Owner = this
+            };
             modelUpdate.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SearchModel searchModel = new SearchModel
+            {
+                Owner = this
+            };
+            searchModel.Show();
         }
     }
 }

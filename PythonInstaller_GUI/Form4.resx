@@ -117,6 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label3.Text" xml:space="preserve">
+    <value>本软件使用GUI窗口界面简化以及方便开发人员或新手安装及管理Python。
+部署Python环境是通过同文件夹下的Python包，并将其添加到系统环境下，
+一般情况不推荐使用本软件设置Python环境。
+
+包管理直接使用pip，所以也请保证你的Python有安装pip。本软件包括功
+能模块下载，卸载，更新，版本查看，模块搜索等。可同时下载多个模块。
+
+本软件完全开源，代码在github仓库中，可自行查看。如有发现Bug可在
+github上开启issues，或你有更炫酷的功能可以提交Pull Request。
+
+请勿将本软件用于商用，出售，网络攻击等目的！本作者也不负责关于软
+件使用的后果以及教学！
+
+最后如果你觉得这很酷，请到仓库Star我一个！谢谢使用</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

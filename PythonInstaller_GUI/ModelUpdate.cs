@@ -105,7 +105,7 @@ namespace PythonInstaller_GUI
                     }
                     catch
                     {
-                        MessageBox.Show("出现错误！,暂时不可用！");
+                        MessageBox.Show("哎呀！好像没有可以更新的模块！");
                         this.Close();
                         this.Dispose();
                         return;
@@ -129,6 +129,17 @@ namespace PythonInstaller_GUI
         #endregion
 
         #region 按钮事件
+        private void num_box_TextChanged(object sender, EventArgs e)
+        {
+            if (this.num_box.Text == "")
+            {
+                this.radioButton1.Checked = true;
+            }
+            else
+            {
+                this.radioButton1.Checked = false;
+            }
+        }
         private void start_but_Click(object sender, EventArgs e)
         {
             string[] models_info = GetModelsName((string)this.listBox1.SelectedItem);
@@ -248,7 +259,7 @@ namespace PythonInstaller_GUI
                         string[] results = result.Split('\n');
                         foreach (string i in results)
                         {
-                            this.Cmd_info_box.AppendText(i);
+                            this.Cmd_info_box.AppendText(i + Environment.NewLine);
                         }
                     }), new object[] { e.Data });
                 }
@@ -297,16 +308,5 @@ namespace PythonInstaller_GUI
 
         #endregion
 
-        private void num_box_TextChanged(object sender, EventArgs e)
-        {
-            if (this.num_box.Text == "")
-            {
-                this.radioButton1.Checked = true;
-            }
-            else
-            {
-                this.radioButton1.Checked = false;
-            }
-        }
     }
 }

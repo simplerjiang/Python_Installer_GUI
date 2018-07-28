@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModelDownloadForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.start_but = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -141,9 +142,10 @@
             this.Controls.Add(this.Cmd_info_box);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ModelDownloadForm";
-            this.Text = "ModelDownloadForm";
+            this.Text = "下载模块";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModelDownloadForm_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

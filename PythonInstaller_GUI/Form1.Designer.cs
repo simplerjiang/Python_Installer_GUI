@@ -28,24 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Form1_title = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Form1_setpath = new System.Windows.Forms.Button();
             this.Form1_pip = new System.Windows.Forms.Button();
             this.Form1_showpath = new System.Windows.Forms.Button();
             this.setPath = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Form1_title
-            // 
-            this.Form1_title.AutoSize = true;
-            this.Form1_title.Font = new System.Drawing.Font("楷体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Form1_title.Location = new System.Drawing.Point(49, 27);
-            this.Form1_title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Form1_title.Name = "Form1_title";
-            this.Form1_title.Size = new System.Drawing.Size(204, 25);
-            this.Form1_title.TabIndex = 0;
-            this.Form1_title.Text = "Python自动安装";
             // 
             // Form1_setpath
             // 
@@ -78,6 +70,7 @@
             this.Form1_showpath.TabIndex = 1;
             this.Form1_showpath.Text = "软件信息";
             this.Form1_showpath.UseVisualStyleBackColor = true;
+            this.Form1_showpath.Click += new System.EventHandler(this.Form1_showpath_Click);
             // 
             // setPath
             // 
@@ -96,33 +89,58 @@
             this.openFileDialog1.FileName = "python.exe";
             this.openFileDialog1.Filter = "Python主程序|*.exe";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PythonInstaller_GUI.Properties.Resources.python_logo_master_v3_TM;
+            this.pictureBox1.Location = new System.Drawing.Point(54, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(197, 62);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(258, 304);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(39, 15);
+            this.linkLabel1.TabIndex = 3;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "V1.0";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 320);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Form1_showpath);
             this.Controls.Add(this.setPath);
             this.Controls.Add(this.Form1_pip);
             this.Controls.Add(this.Form1_setpath);
-            this.Controls.Add(this.Form1_title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Python自动安装";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label Form1_title;
         private System.Windows.Forms.Button Form1_setpath;
         private System.Windows.Forms.Button Form1_pip;
         private System.Windows.Forms.Button Form1_showpath;
         private System.Windows.Forms.Button setPath;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

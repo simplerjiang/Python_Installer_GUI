@@ -46,7 +46,14 @@ namespace PythonInstaller_GUI
             CmdProcess.Start();
             CmdProcess.BeginOutputReadLine();
             CmdProcess.BeginErrorReadLine();
-            await CmdProcess.StandardInput.WriteLineAsync("python -m pip uninstall " + Model_name +" -y&exit");
+            if (PublicValue.Python_path == "")
+            {
+                await CmdProcess.StandardInput.WriteLineAsync("python -m pip uninstall " + Model_name + " -y&exit");
+            }
+            else
+            {
+                await CmdProcess.StandardInput.WriteLineAsync(PublicValue.Python_path + " -m pip uninstall " + Model_name + " -y&exit");
+            }
         }
         private void OutPutToBox(object sender, DataReceivedEventArgs e)
         {

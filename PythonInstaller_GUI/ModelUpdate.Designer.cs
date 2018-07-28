@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModelUpdate));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.start_but = new System.Windows.Forms.Button();
@@ -168,9 +169,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ModelUpdate";
-            this.Text = "ModelUpdate";
+            this.Text = "模块更新";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModelUpdate_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

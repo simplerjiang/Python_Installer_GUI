@@ -81,7 +81,14 @@ namespace PythonInstaller_GUI
             CmdProcess.EnableRaisingEvents = true;
             CmdProcess.Exited += new EventHandler(ExitEvent);
             CmdProcess.Start();
-            CmdProcess.StandardInput.WriteLine("python -m pip install " + Model_name.Text + InstallArg+"&exit");
+            if (PublicValue.Python_path == "")
+            {
+                CmdProcess.StandardInput.WriteLine("python -m pip install " + Model_name.Text + InstallArg + "&exit");
+            }
+            else
+            {
+                CmdProcess.StandardInput.WriteLine(PublicValue.Python_path + " -m pip install " + Model_name.Text + InstallArg + "&exit");
+            }
             CmdProcess.BeginErrorReadLine();
             CmdProcess.BeginOutputReadLine();
             this.start_but.Text = "正在安装";
@@ -129,11 +136,15 @@ namespace PythonInstaller_GUI
                 this.BeginInvoke(new Action(() =>
                 {
                     MessageBox.Show("已完成！请查看是否成功！");
-                    this.start_but.Enabled = true;
-                    this.start_but.Text = "开始安装";
+                    this.start_but.Text = "安装完成";
                     this.IsFinished = true;
-                    Form3 PresentForm = (Form3)this.Owner;
-                    PresentForm.Reload_Form3();
+                    try
+                    {
+                        Form3 PresentForm = (Form3)this.Owner;
+                        PresentForm.Reload_Form3();
+                    }
+                    catch
+                    {}
                 }));
             }
         }
