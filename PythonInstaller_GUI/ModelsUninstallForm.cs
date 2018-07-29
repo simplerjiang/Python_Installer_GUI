@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PythonInstaller_GUI
@@ -26,10 +19,10 @@ namespace PythonInstaller_GUI
             }
             else
             {
-                Uninstall_ModelAsync(Model_name);
+                Uninstall_Model(Model_name);
             }
         }
-        public async Task Uninstall_ModelAsync(string model_name)
+        public void Uninstall_Model(string model_name)
         {
             Process CmdProcess = new Process();
             CmdProcess.StartInfo.FileName = "cmd.exe";      // 命令  
@@ -48,11 +41,11 @@ namespace PythonInstaller_GUI
             CmdProcess.BeginErrorReadLine();
             if (PublicValue.Python_path == "")
             {
-                await CmdProcess.StandardInput.WriteLineAsync("python -m pip uninstall " + Model_name + " -y&exit");
+                CmdProcess.StandardInput.WriteLine("python -m pip uninstall " + Model_name + " -y&exit");
             }
             else
             {
-                await CmdProcess.StandardInput.WriteLineAsync(PublicValue.Python_path + " -m pip uninstall " + Model_name + " -y&exit");
+                CmdProcess.StandardInput.WriteLine(PublicValue.Python_path + " -m pip uninstall " + Model_name + " -y&exit");
             }
         }
         private void OutPutToBox(object sender, DataReceivedEventArgs e)

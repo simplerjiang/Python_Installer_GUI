@@ -27,3 +27,7 @@ E:\项目\PythonInstaller_GUI\Python_Installer_GUI\PythonInstaller_GUI\obj\Debug
 E:\项目\PythonInstaller_GUI\Python_Installer_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.ModelUpdate.resources
 E:\项目\PythonInstaller_GUI\Python_Installer_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.SearchModel.resources
 E:\项目\PythonInstaller_GUI\Python_Installer_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.Form4.resources
+E:\项目\PythonInstaller_GUI\Python_Installer_GUI\PythonInstaller_GUI\bin\Debug\PythonInstaller_GUI.exe.manifest
+E:\项目\PythonInstaller_GUI\Python_Installer_GUI\PythonInstaller_GUI\bin\Debug\PythonInstaller_GUI.application
+E:\项目\PythonInstaller_GUI\Python_Installer_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.exe.manifest
+E:\项目\PythonInstaller_GUI\Python_Installer_GUI\PythonInstaller_GUI\obj\Debug\PythonInstaller_GUI.application

@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Diagnostics;
 
 namespace PythonInstaller_GUI
 {
@@ -19,7 +11,7 @@ namespace PythonInstaller_GUI
             InitializeComponent();
             this.textBox1.Text = "正在开始..." + Environment.NewLine;
             string str_path = Environment.CurrentDirectory;
-            if (Environment.Is64BitOperatingSystem)
+            if (IntPtr.Size == 8)
             {
                 string python_path = Path.Combine(str_path, "Python3.7-x64");
                 string python86_path = Path.Combine(str_path, "Python3.7-x86");

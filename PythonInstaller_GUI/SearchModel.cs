@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PythonInstaller_GUI
@@ -130,7 +123,6 @@ namespace PythonInstaller_GUI
                 {
                     this.search_but.Text = "搜索";
                     this.search_but.Enabled = true;
-                    this.download_but.Enabled = true;
                     this.IsFinished = true;
                     this.IsPrint = false;
                 }));
@@ -163,6 +155,7 @@ namespace PythonInstaller_GUI
             if (listBox1.SelectedIndex == -1)
             {
                 MessageBox.Show("请选择一个模块");
+                return;
             }
             ModelDownloadForm modelDownloadForm = new ModelDownloadForm((string)listBox1.SelectedItem)
             {
