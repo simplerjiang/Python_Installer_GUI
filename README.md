@@ -42,6 +42,17 @@ Python！。
 此功能是用于设定特定的Python环境，你在设置指定Python环境后，可以针对性的特定的Python进行pip包管理。
 你需要点选Python环境下的`python.exe`文件夹。目前V1.0还没有加入`设置特定Python路径到环境路径（PATH）`。
 
+#### 使用环境依赖
+
+目标框架：.net framework 3.5 CP 
+
+win10 自带.net 框架，可直接开启
+
+server 2012 R2 进测试，在服务器功能中添加.net后可使用。
+
+win7 需安装.net 3.5或以上
+
+win8 未测试
 
 ---
 
