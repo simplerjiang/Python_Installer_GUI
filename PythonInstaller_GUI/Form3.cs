@@ -234,6 +234,7 @@ namespace PythonInstaller_GUI
                 {
                     this.BeginInvoke(new Action(() =>
                     {
+                        MessageBox.Show("没有找到Python环境！");
                         Close();
                     }));
                 }
