@@ -1,4 +1,5 @@
-# Python安装及包管理（Windows窗体程序）
+# Python安装及pip包管理（Windows窗体程序）
+一个有界面的pip包管理！
 
 ## 图片
 
