@@ -15,16 +15,39 @@ pip包管理
 ---
 
 ## 版本
-2018/7/30日 发布V1.0版本 MD5值:744b42f983b48917caedd8642e058727
+2018/7/30日 发布V1.0版本 MD5值:a228012b0d04560f483e123d5ce4007d
 
 如果你在其他地方下载的，请务必检查文件MD5值，否则出现其他状况作者不负责。
 
 ---
 
-## 说明
+## 使用说明
 
-是一个基于.net WinForm C#的窗体程序
+是一个基于.net WinForm C#的窗体程序，功能包括了”部署Python环境" 和 “pip包管理”
 
-使用GUI简化以及方便开发人员或新手安装及管理Python。
+#### 部署Python环境
+使用此功能需要下载完整版，并且将解压包内所有文件内所有文件放在同一文件夹下，软件会自动
+在你打开此功能后，检测你的CPU位数，将文件夹下的Python文件添加到系统环境（PATH）下。
+所以请不要删除Python3.7文件，如果删除了，你就GG了。所以不推荐使用！除非你真的不懂怎么安装
+Python！。
 
-欢迎持续关注，写完后会完善文档
+#### pip包管理
+此功能是完全基于pip进行操作，所以如果你没有pip，那就不能正常使用！当然，上面"部署Python环境"
+这个功能完成是自带pip的，但是需要使用指令 `python -m pip`的指令开启。当然，它已经实现pip内
+的几乎所有功能，包括：`搜索模块` `更新模块列表` `更新模块及指定版本` `下载模块及指定版本` 
+`卸载模块`等。
+
+#### 指定特定路径
+此功能是用于设定特定的Python环境，你在设置指定Python环境后，可以针对性的特定的Python进行pip包管理。
+你需要点选Python环境下的`python.exe`文件夹。目前V1.0还没有加入`设置特定Python路径到环境路径（PATH）`。
+
+
+---
+
+## 软件下载
+分为两个版本，完整版和简易版，区别在于完整版包含了Python3.7的32位以及64位，可以使用“设置Python环境" 功能
+
+完整版：https://github.com/simplerjiang/Python_Installer_GUI/blob/master/Python%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7.rar
+
+简易版：https://github.com/simplerjiang/Python_Installer_GUI/blob/master/PythonInstaller_GUI_V1.0.exe
+
